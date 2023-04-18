@@ -1,0 +1,7 @@
+# Goal:
+string target_name
+---
+# Result:
+bool goal_reached
+---
+# Feedback:
