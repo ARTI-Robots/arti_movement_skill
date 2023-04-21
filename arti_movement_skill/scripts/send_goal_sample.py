@@ -36,7 +36,16 @@ class GoalTester(object):
                 self.client.wait_for_result()
                 result = self.client.get_result()
                 if result:
-                    print "Goal succeeded!"
+                    print "Goal " + self.goals [0] + " succeeded!"
+                    self.goals.pop(0)
+                    self.goal_send = False
+                    if len(self.goals) != 0:
+                      goal = MovementSkillGoal()
+                      goal.target_name = self.goals[0]
+                      self.client.send_goal(goal)
+                      self.goal_send = True
+                    elif len(self.goals) == 0:
+                      break
             rate.sleep()
 
 if __name__ == '__main__':

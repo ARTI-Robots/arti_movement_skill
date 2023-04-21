@@ -5,8 +5,7 @@
   <description>The arti_movement_skill package</description>
 
 
- <maintainer email="c.muehlbacher@arti-robots.com">Clemens Muehlbacher</maintainer>
-
+  <maintainer email="c.muehlbacher@arti-robots.com">Clemens Muehlbacher</maintainer>
 
   <license>BSD</license>
 

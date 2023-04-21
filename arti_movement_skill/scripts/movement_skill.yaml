@@ -1,0 +1,68 @@
+movement_skills:
+  move_base:
+    type: arti_move_base_skill/MoveBaseSkill
+#Finepositioning skill example
+#  fine_positioning:
+#    type: arti_fine_positioning_skill/FinePositioningSkill
+#    maximum_retries: 3
+#    detection_duration: 2.0
+graph:
+  frame_id: map
+  vertices:
+    - name: charging_station
+      x: 1.0000
+      y: 0.7000
+      z: 0.00
+      yaw: 0.00
+    - name: production_1
+      x: 30.4500
+      y: 35.2500
+      z: 0.00
+      yaw: 0.00
+    - name: production_2
+      x: 4.5000
+      y: 21.7500
+      z: 0.00
+      yaw: 0.00
+    - name: shipping
+      x: 29.6000
+      y: 20.5000
+      z: 0.00
+      yaw: 0.00
+  edges:
+    - source: charging_station
+      destination: production_1
+      type: move_base
+    - source: charging_station
+      destination: production_2
+      type: move_base
+    - source: charging_station
+      destination: shipping
+      type: move_base
+    - source: production_1
+      destination: charging_station
+      type: move_base
+    - source: production_1
+      destination: production_2
+      type: move_base
+    - source: production_1
+      destination: shipping
+      type: move_base
+    - source: production_2
+      destination: charging_station
+      type: move_base
+    - source: production_2
+      destination: production_1
+      type: move_base
+    - source: production_2
+      destination: shipping
+      type: move_base
+    - source: shipping
+      destination: charging_station
+      type: move_base
+    - source: shipping
+      destination: production_1
+      type: move_base
+    - source: shipping
+      destination: production_2
+      type: move_base
